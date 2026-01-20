@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FDF8F3;
+  --foreground: #4E342E;
+  --card-bg: #FFFFFF;
+  --primary-brown: #5D4037;
+  --dark-brown: #4E342E;
+  --light-brown: #8D6E63;
+  --cream: #EFEBE9;
+  --warm-beige: #D7CCC8;
+  --accent: #A1887F;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
+}
+
+body {
+  background: linear-gradient(135deg, #FDF8F3 0%, #EFEBE9 100%);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+.quiz-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(93, 64, 55, 0.1);
+  padding: 2.5rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+.quiz-title {
+  font-family: var(--font-serif), Georgia, serif;
+  color: var(--dark-brown);
+}
+
+.answer-btn {
+  background: linear-gradient(135deg, #EFEBE9 0%, #D7CCC8 100%);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  transition: all 0.2s ease;
+  color: var(--dark-brown);
+  cursor: pointer;
+  width: 100%;
+}
+
+.answer-btn:hover {
+  background: linear-gradient(135deg, #D7CCC8 0%, #BCAAA4 100%);
+  border-color: var(--light-brown);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.15);
+}
+
+.start-btn {
+  background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.start-btn:hover {
+  background: linear-gradient(135deg, #5D4037 0%, #4E342E 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(93, 64, 55, 0.3);
+}
+
+.result-card {
+  background: linear-gradient(135deg, #EFEBE9 0%, #D7CCC8 100%);
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.percentage-bar {
+  background: var(--warm-beige);
+  border-radius: 50px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.percentage-fill {
+  background: linear-gradient(90deg, #8D6E63 0%, #5D4037 100%);
+  height: 100%;
+  border-radius: 50px;
+  transition: width 0.5s ease;
+}
+
+.progress-dots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.progress-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--warm-beige);
+  transition: background 0.2s ease;
+}
+
+.progress-dot.active {
+  background: var(--primary-brown);
+}
+
+.progress-dot.completed {
+  background: var(--light-brown);
+}
